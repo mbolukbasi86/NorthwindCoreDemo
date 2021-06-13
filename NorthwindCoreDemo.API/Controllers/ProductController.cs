@@ -17,7 +17,7 @@ namespace NorthwindCoreDemo.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly NorthwindDbContext _northwindDbContext; //It' for demo. Do not use DbContext in Controller.!!!
+        private readonly NorthwindDbContext _northwindDbContext; //It's for demo. Do not use DbContext in Controller.!!!
 
         public ProductController(NorthwindDbContext northwindDbContext)
         {
