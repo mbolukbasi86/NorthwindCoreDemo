@@ -17,4 +17,8 @@
     <ProjectReference Include="..\NorthwindCoreDemo.Data\NorthwindCoreDemo.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ResponseModel\" />
+  </ItemGroup>
+
 </Project>
