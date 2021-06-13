@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NorthwindCoreDemo.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace NorthwindCoreDemo.Data
         {
                 
         }
-
+        public DbSet<Product> Product { get;set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(NorthwindDbContext).Assembly);

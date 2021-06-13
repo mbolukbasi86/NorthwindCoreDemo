@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NorthwindCoreDemo.API.RequestModel;
+using NorthwindCoreDemo.API.ResponseModel;
 using NorthwindCoreDemo.Data;
 using NorthwindCoreDemo.Data.Entities;
 using System;
@@ -36,6 +39,13 @@ namespace NorthwindCoreDemo.API.Controllers
             _northwindDbContext.Add(p);
             _northwindDbContext.SaveChanges();
             return Ok();
+        }
+        [HttpGet("GetProducts")]
+        public IActionResult GetProducts()
+        {
+            var p = new GetProductsModel();
+            p.Products = _northwindDbContext.Product.ToList();
+            return Ok(p);
         }
     }
 }
