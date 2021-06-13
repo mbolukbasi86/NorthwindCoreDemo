@@ -40,6 +40,16 @@ namespace NorthwindCoreDemo.API.Controllers
             _northwindDbContext.SaveChanges();
             return Ok();
         }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete([FromBody] DeleteProductRequestModel req)
+        {
+            var p = new Product();
+            p.ProductId = req.ProductId;
+            _northwindDbContext.Remove(p);
+            _northwindDbContext.SaveChanges();
+            return Ok();
+        }
         [HttpGet("GetProducts")]
         public IActionResult GetProducts()
         {
